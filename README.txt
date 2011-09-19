@@ -1,6 +1,7 @@
 README.
 
-This is a project for a group in the course 02393 at DTU, Programming in C++. Public for all to judge.
+This is a game project for a group in the course 02393 at DTU, Programming in C++. 
+Public for all to judge.
 
 Team members:
 Tomas Gudmundsson
