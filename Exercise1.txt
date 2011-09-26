@@ -1,0 +1,6 @@
+Hugmyndir að steinum fyrir Enigma
+
+1. PortalSteinn : Tveir steinar, ferð í einn og skýst út um hinn.
+2. AttractorSteinn : Dregur kúluna að sér.
+3. DeflectorSteinn : Ýtir kúlunni frá sér.
+4. PinballSteinn : Grípur kúluna og skýtur í random átt í burtu.
