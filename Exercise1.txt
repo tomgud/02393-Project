@@ -4,3 +4,9 @@ Hugmyndir að steinum fyrir Enigma
 2. AttractorSteinn : Dregur kúluna að sér.
 3. DeflectorSteinn : Ýtir kúlunni frá sér.
 4. PinballSteinn : Grípur kúluna og skýtur í random átt í burtu.
+5. SandSteinn : Kúlan fer í gegnum steininn en mun hægar en vanalega (gæti verið vatn í stað sands).
+6. PulseSteinn : Svipaður og Deflector steinninn en ýtir kúlunni í burtu í smá tíma, hvílir í smá tíma og byrjar að ýta aftur. 
+7. SkopparaSteinn: Svipaður og Attractor steininn en togar í smástund, sleppir, togar o.s.frv. til að láta kúluna skoppa við steininn.
+8. PowerUpSteinn : Steinn sem gefur kúlunni einhverja eiginleika í smá tíma. t.d. aukinn hraða.
+9. PowerDownSteinn : Öfugt við Power Up steininn þá er þessi steinn með eitthvað óþolandi handa kúlunni, eins og t.d. reverse stýringar þar sem upp er niður og niður er upp ...
+10. RafmagnsSteinn : Steinn sem gefur kúlunni rafmagn. Þegar kúlan heldur áfram þá fær hún rafmagnsskot öðru hvoru sem lætur hana hraða sig random mikið...
