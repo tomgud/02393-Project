@@ -12,4 +12,4 @@ Hugmyndir að steinum fyrir Enigma
 10. RafmagnsSteinn : Steinn sem gefur kúlunni rafmagn. Þegar kúlan heldur áfram þá fær hún rafmagnsskot öðru hvoru sem lætur hana hraða sig random mikið...
 11. ÓsýnisSteinn : Gerir kúluna ósýnilega í einhvern tíma.
 12. TvölfdunarSteinn : Tvöfaldar fjöldann ( eða bætir við auka stein ) í borðinu.
-13. ResetSteinn : Sendir kúluna aftur á byrjunar reit.
+13. ResetSteinn : Sendir kúluna aftur á byrjunar reit.	
