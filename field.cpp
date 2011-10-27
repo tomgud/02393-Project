@@ -30,6 +30,11 @@ vector3df cubePosition(int x, int y, bool isWall)
 	return core::vector3df(fieldsize*y+halffieldsize,vpos,fieldsize*x+halffieldsize);
 };
 
+
+//------------------------------------
+// Wall!
+//------------------------------------
+
 Wall::Wall(scene::ISceneManager* smgr, video::IVideoDriver* driver, int x, int y) : Field(smgr,driver,x,y)
 {
 	// instances of Wall may use a different texture or even several of them. 
@@ -199,6 +204,22 @@ void Wall::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap)
 fieldtype Wall::getFieldType(){ return tWall; }
 
 
+
+//------------------------------------
+// Pulse wall!
+//------------------------------------
+
+
+PulseWall::PulseWall(scene::ISceneManager* smgr, video::IVideoDriver* driver, int x, int y) : Field(smgr,driver,x,y) // calling constructor of parent class
+{
+	
+}
+
+
+
+
+
+
 //------------------------------------
 // Floor!
 //------------------------------------
@@ -237,7 +258,8 @@ LightFloor::LightFloor(scene::ISceneManager* smgr, video::IVideoDriver* driver, 
 	timeSpentHere=0.f;
 }
 
-void LightFloor::sphereEnter(Sphere &s) {
+void LightFloor::sphereEnter(Sphere &s) 
+{
 	block->setMaterialTexture(0,alt_texture); 
 }
 
