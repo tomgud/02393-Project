@@ -104,4 +104,6 @@ public:
   virtual fieldtype getFieldType();
 };
 
+
+class 
 #endif

@@ -63,7 +63,7 @@ Wall::Wall(scene::ISceneManager* smgr,
 
  void Wall::timeProgress(f32 frameDeltaTime){
     // do nothing
-  };
+};
 
  void Wall::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap){
     // standard collision detection
@@ -96,10 +96,10 @@ Floor::Floor(scene::ISceneManager* smgr,
     block->setPosition(cubePosition(x,y,false));
     block->setMaterialFlag(video::EMF_LIGHTING, false);
   }
- bool Floor::reflects(){ return false; }
+bool Floor::reflects(){ return false; }
    void Floor::sphereEnter(Sphere &s){
     // do nothing
-  }
+}
    void Floor::sphereExit(Sphere &s){
     // do nothing
   }
