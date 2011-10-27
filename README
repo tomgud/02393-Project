@@ -1,0 +1,46 @@
+How to compile base-example
+
+First make sure that this file, together with the Makefile, the base-example.cpp and the dll are in a folder that is
+in the same folder hierarchy as the irrlicht-1.7.2 folder (this can be downloaded from
+http://downloads.sourceforge.net/irrlicht/irrlicht-1.7.2.zip). 
+For example, you have a folder called C++, that has the folders irrlicht-1.7.2 and base-example (where this file is).
+
+Then follow these instructions, depending on the machine you are using.
+
+WINDOWS: 
+		1. install cygwin (not forgetting to install the Devel and X11 packages)
+        2. open the makefile in a text editor / IDE / code editor (Do NOT use Word etc.)
+			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
+			- Notepad++ probably can do it. (http://notepad-plus-plus.org/)
+		3. then run the following commands in this directory:
+			- make
+			- ./base-example.exe
+	
+
+LINUX:  
+		1. first go to the irrlicht-1.7.2/source/Irrlicht and run the command make (to compile the irrlicht library)
+        2. open the makefile in a text editor / IDE / code editor (Do NOT use openoffice etc.)
+			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
+			- gedit, emacs, vim or nano are some of the editors that can be used
+		3. In this folder run the following commands:
+			- make
+			- ./base-example
+
+MAC: 
+		1. Follow the instruction here http://www.irrlicht3d.org/wiki/index.php?n=Main.Macintosh#no1.1.1 to compile the
+irrlicht library, step 7 is actually "Set Active Architecture: i386". (install XCode first in case you don't have it yet, you can find it in the App Store)
+        2. open the makefile in a text editor / IDE / code editor (Do NOT use openoffice etc.)
+			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
+            - Xcode can probably do it.
+		3. execute the following commands in this directory:
+			- make
+			- ./base-example
+			
+-------------------------------------------------------------------------------------------------------------------------
+
+Hopefully, this will get the base-example running.
+You can change the name of the source (cpp) file that you want to compile, and the name of the output file in the
+first lines of the Makefile that is in this folder.
+
+If you have any question, please email me (Jose) at jncq@imm.dtu.dk.
+	
