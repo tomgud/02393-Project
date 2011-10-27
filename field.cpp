@@ -175,7 +175,6 @@ LightFloor::LightFloor(scene::ISceneManager* smgr,
     }
   };
    fieldtype LightFloor::getFieldType(){ return tLightFloor; }
-=======
 void Wall::timeProgress(f32 frameDeltaTime){ /* do nothing */ };
 
 void Wall::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap)
