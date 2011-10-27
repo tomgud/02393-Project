@@ -83,6 +83,22 @@ void Wall::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap)
 fieldtype Wall::getFieldType(){ return tWall; }
 
 
+
+//------------------------------------
+// Pulse wall!
+//------------------------------------
+
+
+PulseWall::PulseWall(scene::ISceneManager* smgr, video::IVideoDriver* driver, int x, int y) : Field(smgr,driver,x,y) // calling constructor of parent class
+{
+	
+}
+
+
+
+
+
+
 //------------------------------------
 // Floor!
 //------------------------------------
