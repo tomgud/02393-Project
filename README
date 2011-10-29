@@ -1,46 +1,139 @@
-How to compile base-example
+README for the final game framework
+-----------------------------------
 
-First make sure that this file, together with the Makefile, the base-example.cpp and the dll are in a folder that is
-in the same folder hierarchy as the irrlicht-1.7.2 folder (this can be downloaded from
-http://downloads.sourceforge.net/irrlicht/irrlicht-1.7.2.zip). 
-For example, you have a folder called C++, that has the folders irrlicht-1.7.2 and base-example (where this file is).
+The goal of this framework is to integrate the work of all programming
+teams into our game "enigma3d". To make this possible, this framework
+provides the entire "infrastructure" of the game, so that each team
+has their own set of files they work on.
 
-Then follow these instructions, depending on the machine you are using.
+ * Below is the list of current programming teams, each team has a
+   label TXX (for some number XX). The files belonging to such a group are
+   TXX.cpp and TXX.h. 
 
-WINDOWS: 
-		1. install cygwin (not forgetting to install the Devel and X11 packages)
-        2. open the makefile in a text editor / IDE / code editor (Do NOT use Word etc.)
-			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
-			- Notepad++ probably can do it. (http://notepad-plus-plus.org/)
-		3. then run the following commands in this directory:
-			- make
-			- ./base-example.exe
-	
+ * YOU MUST NOT change any other files than the ones belonging to your
+   group, because otherwise the integration of the works is not
+   possible. 
 
-LINUX:  
-		1. first go to the irrlicht-1.7.2/source/Irrlicht and run the command make (to compile the irrlicht library)
-        2. open the makefile in a text editor / IDE / code editor (Do NOT use openoffice etc.)
-			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
-			- gedit, emacs, vim or nano are some of the editors that can be used
-		3. In this folder run the following commands:
-			- make
-			- ./base-example
+ * If any team has a problem integrating their work into the game by
+   changing only their TXX.cpp/.h, they MUST contact us; then we will
+   find a solution, in the worst case with that team's work not being
+   integrated with the rest.
 
-MAC: 
-		1. Follow the instruction here http://www.irrlicht3d.org/wiki/index.php?n=Main.Macintosh#no1.1.1 to compile the
-irrlicht library, step 7 is actually "Set Active Architecture: i386". (install XCode first in case you don't have it yet, you can find it in the App Store)
-        2. open the makefile in a text editor / IDE / code editor (Do NOT use openoffice etc.)
-			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
-            - Xcode can probably do it.
-		3. execute the following commands in this directory:
-			- make
-			- ./base-example
-			
--------------------------------------------------------------------------------------------------------------------------
+ * Please do look carefully through all the central files of the program and 
+   their comments to understand how the game works:
+   - game.cpp / game.h
+   - field.cpp / field.h 
+   - main.cpp
+   and most importantly the example fields in
+   - testfield.cpp / testfield.h
+   These latter two are very much like how your TXX.cpp/TXX.h should
+   look like. You are welcome to copy any of the code from these existing 
+   files and re-use it in your TXX.cpp/TXX.h. 
 
-Hopefully, this will get the base-example running.
-You can change the name of the source (cpp) file that you want to compile, and the name of the output file in the
-first lines of the Makefile that is in this folder.
+ * You see in the code, that the name of the class that team TXX would
+   build is TXX, and the unique identifier for that Field is tTXX that
+   should return upon getFieldIdentifier(). You must not change that.
 
-If you have any question, please email me (Jose) at jncq@imm.dtu.dk.
-	
+ * Every group should write a level file (modifying
+   enigma3d.app/Contents/Resources/field.lvl) in which the own kind of
+   Field occurs. The field entry in the level file should simply be
+   the group number XX.
+   
+ * FINAL SUBMISSION: send to Jose <jncq@imm.dtu.dk> :
+   - your TXX.h 
+   - your TXX.cpp 
+   - your field.lvl -- renamed to TXX.lvl
+   - any textures/etc. your stone uses
+
+ * If your team works on more than one Field type, ask Jose for reserving
+   additional names/identifiers for you. 
+
+ * MOST IMPORTANT: Any problems, unclarities, questions : contact us!!
+
+----------- here is the current list of teams with their TXX numbers ------------------
+
+Mads Friis Hansen  T01
+David Miles Carlsen  T01
+Nicklas Ploug Feenstra  T01
+Jacob Søgaard  T02
+Peter Bundsgaard  T02
+Jonathan Gabriel Theodor Høstgaard-Brene  T02
+Allan Riordan Boll  T03
+Mikkel Brettschneider  T03
+Søren Matthias Goldschmidt  T03
+Bo Mortensen  T04
+Constantin Hubmann  T04
+Tue Steen Madsen  T05
+Claes Gustav Oliver Ahlberg  T05
+Mika Turunen  T06
+Clara Issanchou  T06
+Florine Yana  T06
+Jakob Mahler Hansen  T07
+Minh Haw Truong  T07
+Kenneth Marx Hoe  T07
+Peter Juhler Dinesen Pedersen  T07
+Bjarke Pedersen  T08
+Kasper Drenck  T08
+Erik Hannes Andersson  T08
+Timm Daniel Noel Karl Rasmussen  T09
+Anders Bruun Nørring  T09
+Claus Agerskov  T10
+Nelson Walther Bayas  T10
+Nicolas Tiaki Otsu  T11
+Emeline Cadier  T11
+Nicolai Lissau  T11
+Kenneth Borch Zimakoff  T13
+Jimmie Louis Borch  T13
+Simon Kirkeby Wessel  T13
+Nicolaj Voetmann Nielsen  T13
+Jesper Brandt Rasmussen  T14
+Michael Brandt Rasmussen  T14
+Mads Mønster Jensen  T15
+Geir Björnsson  T17
+Thorir Gudlaugsson  T17
+Andreas Hansen  T17
+Lasse Peter Jensen  T17
+Hagalin Asgrimur Gudmundsson  T18
+Dadi Bjarnason  T18
+Tomas Pálsson  T18
+Alexander Fischer Paulsen  T19
+Bo Visfeldt  T20
+Thomas Gregersen  T20
+Casper Andreas Bjerggaard  T21
+Shakib Ataei  T21
+John Philip Randgaard  T21
+Sorin Ovidiu Marinescu  T22
+Rune Tore Paamand  T22
+Jakob Gøttrup Nielsen  T23
+Nicolai Rask Mathiesen  T23
+Peter Gormsen  T23
+Line Jelver  T23
+Jesper Renè Babiel  T24
+Andreas Fisker  T24
+Thomas Munk Jørgensen  T24
+Mehmet Karahan  T25
+Ali Reza Farahnak  T25
+Peter Christian Johnsen  T26
+Morten Glyrup Gam-Pedersen  T26
+Martin Frank Hansen  T27
+Peter Holthe Hansen  T27
+Thomas Buron Glinski  T27
+Kim Long Nguyen  T28
+Khurram  Shahzad  T28
+Jannick Kaas Johansen  T29
+Jonas Smith Stefansson Frederiksen  T30
+John Sørensen  T30
+Lars Hougaard Nielsen  T30
+Elvar Örn Unnthorsson  T31
+Tómas Guðmundsson  T31
+Jan Cicharski  T32
+Dominik Deren  T32
+Daði Rúnar Skúlason  T33
+Runólfur Óskar  Einarsson  T33
+Rasmus Hansen  T34
+Søren  Caspersen  T35
+Michael Cucarella  Petersen  T35
+Jackie Vincent Larsen  T36
+Michael Kell Jensen  T37
+Esben Ahrens T38
+
