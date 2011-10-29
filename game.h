@@ -1,56 +1,78 @@
+/// The main header file of the game; it declares central constants and the Sphere class 
+
 #ifndef  ___GAME_H
 #define  ___GAME_H
 
-
 #include <irrlicht.h>
-#include "driverChoice.h"
 #include <iostream>
-#include <fstream>
-#include <matrix4.h>
 using namespace irr;
 using namespace std;
 using core::vector3df;
-
+using scene::ISceneManager;
+using scene::ISceneNode;
+using video::IVideoDriver;
+using video::ITexture;
+using core::position2di;
 
 ////// Constants
-const int dimx=20;   // the playground will have 20 x 13 fields
-const int dimy=13;
-const f32 fieldsize=8.f;  // each field is a square or a cube of side length 8 units 
-const f32 halffieldsize=fieldsize/2;
-const f32 spheresize = 2.f;  // sphere has radius 2 units
+#define dimx 20   // the playground will have 20 x 13 fields
+#define dimy 13
+#define fieldsize 8.f  // each field is a square or a cube of side length 8 units 
+#define halffieldsize fieldsize/2
+#define spheresize 2.f  // sphere has radius 2 units
 
-const f32 offsetx=fieldsize*dimx/2; // offset of the playground's center from (0,0,0)
-const f32 offsety=fieldsize*dimy/2;
+#define offsetx fieldsize*dimx/2 // offset of the playground's center from (0,0,0)
+#define offsety fieldsize*dimy/2
 
-const f32 minborderx = spheresize+fieldsize; // borders of the field (for collision detection)
-const f32 maxborderx = fieldsize*(dimx-1)-spheresize;
-const f32 minbordery = spheresize+fieldsize;  
-const f32 maxbordery = fieldsize*(dimy-1)-spheresize;
+#define minborderx spheresize+fieldsize // borders of the field (for collision detection)
+#define maxborderx fieldsize*(dimx-1)-spheresize
+#define minbordery spheresize+fieldsize  
+#define maxbordery fieldsize*(dimy-1)-spheresize
 
-const io::path texturepath="base-example.app/Contents/Resources/";
+extern io::path texturepath;
 
 int getFieldx(vector3df position);
 int getFieldy(vector3df position);
   
 f32 getOverlapx(vector3df position, int fx);
 f32 getOverlapy(vector3df position, int fy);
+
+void error(string msg);
+
 class Sphere{
+ public:
+  // typdef (void *)(Sphere &,position2di,f32,f32) sphereProgressHandler; 
+
 private:
   vector3df position,velocity;
-  scene::ISceneManager* smgr;
-  video::IVideoDriver* driver;
-  scene::ISceneNode * sphere;
+  ISceneManager* smgr;
+  IVideoDriver* driver;
+  ISceneNode * sphere;
+  void (*altSphereProgress)(Sphere &,position2di,f32,f32);
 public:
-  Sphere(scene::ISceneManager* smgr,
-	 video::IVideoDriver* driver,
-	 vector3df p=core::vector3df(offsety,spheresize+fieldsize*.5f,offsetx));
+  Sphere(ISceneManager* smgr,
+	 IVideoDriver* driver,
+	 vector3df p=vector3df(offsety,spheresize+fieldsize*.5f,offsetx));
 
   vector3df getPosition();
   void setPosition(vector3df p);
   vector3df getVelocity();
   void setVelocity(vector3df v);
 
-  void standardSphereProgress(core::position2di mousemove, f32 frameDeltaTime, f32 friction);
+  /* this method is typically used when a (Floor) field has control
+   over the sphere and does not want to do anything special; this
+   function changes the velocity according to given mousemovement and
+   friction, and then lets the sphere move according to velocity for
+   the given timeperiod.  This standard behavior can be overwritten by
+   installing alternate handlers (see last two methods below).
+  */
+  void standardSphereProgress(position2di mousemove, f32 frameDeltaTime, f32 friction);
+
+  // Install an alternate handler for the progress; see LightWall (in testfield.cpp/.h) for an example
+  void installAlternateSphereProgress(void (* f)(Sphere &,position2di,f32,f32));
+
+  // Remove an installed alternate handler and go back to standard handling
+  void uninstallAlternateSphereProgress();
 };  
 
 #endif

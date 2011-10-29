@@ -1,0 +1,212 @@
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+
+sed s/TXX/T00/  < TXX.cpp  > T00.cpp
+sed s/TXX/T00/  < TXX.h  > T00.h
+-----------------------------------
+
+
+sed s/TXX/T01/  < TXX.cpp  > T01.cpp
+sed s/TXX/T02/  < TXX.cpp  > T02.cpp
+sed s/TXX/T03/  < TXX.cpp  > T03.cpp
+sed s/TXX/T04/  < TXX.cpp  > T04.cpp
+sed s/TXX/T05/  < TXX.cpp  > T05.cpp
+sed s/TXX/T06/  < TXX.cpp  > T06.cpp
+sed s/TXX/T07/  < TXX.cpp  > T07.cpp
+sed s/TXX/T08/  < TXX.cpp  > T08.cpp
+sed s/TXX/T09/  < TXX.cpp  > T09.cpp
+sed s/TXX/T10/  < TXX.cpp  > T10.cpp
+sed s/TXX/T11/  < TXX.cpp  > T11.cpp
+sed s/TXX/T12/  < TXX.cpp  > T12.cpp
+sed s/TXX/T13/  < TXX.cpp  > T13.cpp
+sed s/TXX/T14/  < TXX.cpp  > T14.cpp
+sed s/TXX/T15/  < TXX.cpp  > T15.cpp
+sed s/TXX/T16/  < TXX.cpp  > T16.cpp
+sed s/TXX/T17/  < TXX.cpp  > T17.cpp
+sed s/TXX/T18/  < TXX.cpp  > T18.cpp
+sed s/TXX/T19/  < TXX.cpp  > T19.cpp
+sed s/TXX/T20/  < TXX.cpp  > T20.cpp
+sed s/TXX/T21/  < TXX.cpp  > T21.cpp
+sed s/TXX/T22/  < TXX.cpp  > T22.cpp
+sed s/TXX/T23/  < TXX.cpp  > T23.cpp
+sed s/TXX/T24/  < TXX.cpp  > T24.cpp
+sed s/TXX/T25/  < TXX.cpp  > T25.cpp
+sed s/TXX/T26/  < TXX.cpp  > T26.cpp
+sed s/TXX/T27/  < TXX.cpp  > T27.cpp
+sed s/TXX/T28/  < TXX.cpp  > T28.cpp
+sed s/TXX/T29/  < TXX.cpp  > T29.cpp
+sed s/TXX/T30/  < TXX.cpp  > T30.cpp
+sed s/TXX/T31/  < TXX.cpp  > T31.cpp
+sed s/TXX/T32/  < TXX.cpp  > T32.cpp
+sed s/TXX/T33/  < TXX.cpp  > T33.cpp
+sed s/TXX/T34/  < TXX.cpp  > T34.cpp
+sed s/TXX/T35/  < TXX.cpp  > T35.cpp
+sed s/TXX/T36/  < TXX.cpp  > T36.cpp
+sed s/TXX/T37/  < TXX.cpp  > T37.cpp
+sed s/TXX/T38/  < TXX.cpp  > T38.cpp
+sed s/TXX/T39/  < TXX.cpp  > T39.cpp
+sed s/TXX/T40/  < TXX.cpp  > T40.cpp
+
+sed s/TXX/T01/  < TXX.h  > T01.h
+sed s/TXX/T02/  < TXX.h  > T02.h
+sed s/TXX/T03/  < TXX.h  > T03.h
+sed s/TXX/T04/  < TXX.h  > T04.h
+sed s/TXX/T05/  < TXX.h  > T05.h
+sed s/TXX/T06/  < TXX.h  > T06.h
+sed s/TXX/T07/  < TXX.h  > T07.h
+sed s/TXX/T08/  < TXX.h  > T08.h
+sed s/TXX/T09/  < TXX.h  > T09.h
+sed s/TXX/T10/  < TXX.h  > T10.h
+sed s/TXX/T11/  < TXX.h  > T11.h
+sed s/TXX/T12/  < TXX.h  > T12.h
+sed s/TXX/T13/  < TXX.h  > T13.h
+sed s/TXX/T14/  < TXX.h  > T14.h
+sed s/TXX/T15/  < TXX.h  > T15.h
+sed s/TXX/T16/  < TXX.h  > T16.h
+sed s/TXX/T17/  < TXX.h  > T17.h
+sed s/TXX/T18/  < TXX.h  > T18.h
+sed s/TXX/T19/  < TXX.h  > T19.h
+sed s/TXX/T20/  < TXX.h  > T20.h
+sed s/TXX/T21/  < TXX.h  > T21.h
+sed s/TXX/T22/  < TXX.h  > T22.h
+sed s/TXX/T23/  < TXX.h  > T23.h
+sed s/TXX/T24/  < TXX.h  > T24.h
+sed s/TXX/T25/  < TXX.h  > T25.h
+sed s/TXX/T26/  < TXX.h  > T26.h
+sed s/TXX/T27/  < TXX.h  > T27.h
+sed s/TXX/T28/  < TXX.h  > T28.h
+sed s/TXX/T29/  < TXX.h  > T29.h
+sed s/TXX/T30/  < TXX.h  > T30.h
+sed s/TXX/T31/  < TXX.h  > T31.h
+sed s/TXX/T32/  < TXX.h  > T32.h
+sed s/TXX/T33/  < TXX.h  > T33.h
+sed s/TXX/T34/  < TXX.h  > T34.h
+sed s/TXX/T35/  < TXX.h  > T35.h
+sed s/TXX/T36/  < TXX.h  > T36.h
+sed s/TXX/T37/  < TXX.h  > T37.h
+sed s/TXX/T38/  < TXX.h  > T38.h
+sed s/TXX/T39/  < TXX.h  > T39.h
+sed s/TXX/T40/  < TXX.h  > T40.h
+
+#include "T01.h"
+#include "T02.h"
+#include "T03.h"
+#include "T04.h"
+#include "T05.h"
+#include "T06.h"
+#include "T07.h"
+#include "T08.h"
+#include "T09.h"
+#include "T10.h"
+#include "T11.h"
+#include "T12.h"
+#include "T13.h"
+#include "T14.h"
+#include "T15.h"
+#include "T16.h"
+#include "T17.h"
+#include "T18.h"
+#include "T19.h"
+#include "T20.h"
+#include "T21.h"
+#include "T22.h"
+#include "T23.h"
+#include "T24.h"
+#include "T25.h"
+#include "T26.h"
+#include "T27.h"
+#include "T28.h"
+#include "T29.h"
+#include "T30.h"
+#include "T31.h"
+#include "T32.h"
+#include "T33.h"
+#include "T34.h"
+#include "T35.h"
+#include "T36.h"
+#include "T37.h"
+#include "T38.h"
+#include "T39.h"
+#include "T40.h"
+
+case TXX: return new TXX(smgr,driver,i,j,pg); break;
+
+case T01: return new T01(smgr,driver,i,j,pg); break;
+case T02: return new T02(smgr,driver,i,j,pg); break;
+case T03: return new T03(smgr,driver,i,j,pg); break;
+case T04: return new T04(smgr,driver,i,j,pg); break;
+case T05: return new T05(smgr,driver,i,j,pg); break;
+case T06: return new T06(smgr,driver,i,j,pg); break;
+case T07: return new T07(smgr,driver,i,j,pg); break;
+case T08: return new T08(smgr,driver,i,j,pg); break;
+case T09: return new T09(smgr,driver,i,j,pg); break;
+case T10: return new T10(smgr,driver,i,j,pg); break;
+case T11: return new T11(smgr,driver,i,j,pg); break;
+case T12: return new T12(smgr,driver,i,j,pg); break;
+case T13: return new T13(smgr,driver,i,j,pg); break;
+case T14: return new T14(smgr,driver,i,j,pg); break;
+case T15: return new T15(smgr,driver,i,j,pg); break;
+case T16: return new T16(smgr,driver,i,j,pg); break;
+case T17: return new T17(smgr,driver,i,j,pg); break;
+case T18: return new T18(smgr,driver,i,j,pg); break;
+case T19: return new T19(smgr,driver,i,j,pg); break;
+case T20: return new T20(smgr,driver,i,j,pg); break;
+case T21: return new T21(smgr,driver,i,j,pg); break;
+case T22: return new T22(smgr,driver,i,j,pg); break;
+case T23: return new T23(smgr,driver,i,j,pg); break;
+case T24: return new T24(smgr,driver,i,j,pg); break;
+case T25: return new T25(smgr,driver,i,j,pg); break;
+case T26: return new T26(smgr,driver,i,j,pg); break;
+case T27: return new T27(smgr,driver,i,j,pg); break;
+case T28: return new T28(smgr,driver,i,j,pg); break;
+case T29: return new T29(smgr,driver,i,j,pg); break;
+case T30: return new T30(smgr,driver,i,j,pg); break;
+case T31: return new T31(smgr,driver,i,j,pg); break;
+case T32: return new T32(smgr,driver,i,j,pg); break;
+case T33: return new T33(smgr,driver,i,j,pg); break;
+case T34: return new T34(smgr,driver,i,j,pg); break;
+case T35: return new T35(smgr,driver,i,j,pg); break;
+case T36: return new T36(smgr,driver,i,j,pg); break;
+case T37: return new T37(smgr,driver,i,j,pg); break;
+case T38: return new T38(smgr,driver,i,j,pg); break;
+case T39: return new T39(smgr,driver,i,j,pg); break;
+case T40: return new T40(smgr,driver,i,j,pg); break;
+

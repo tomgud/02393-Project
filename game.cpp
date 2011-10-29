@@ -1,14 +1,8 @@
-#include <irrlicht.h>
-#include "driverChoice.h"
-#include <iostream>
-#include <fstream>
-#include <matrix4.h>
 #include "game.h"
 
-using namespace irr;
-using namespace std;
-using core::vector3df;
-
+// Here are some useful functions to compute the position on the
+// playground from the 3d-position of the sphere, as well as computing
+// overlaps with other fields.
 
 int getFieldx(vector3df position){
   int x = position.Z/fieldsize;
@@ -40,9 +34,16 @@ f32 getOverlapy(vector3df position, int fy){
   return 0.f;
 }
 
+void error(string message){
+  cerr << message;
+  exit(-1);
+}
 
-Sphere::Sphere(scene::ISceneManager* smgr,
-	 video::IVideoDriver* driver,
+/////////////////////////
+
+// Standard sphere constructor
+Sphere::Sphere(ISceneManager* smgr,
+	 IVideoDriver* driver,
 	 vector3df p){ 
     position=p; 
     this->smgr=smgr;
@@ -51,15 +52,39 @@ Sphere::Sphere(scene::ISceneManager* smgr,
     sphere->setPosition(p);
     sphere->setMaterialFlag(video::EMF_LIGHTING
 			    , false);
-    sphere->setMaterialTexture(0,driver->getTexture(texturepath+"fl-abyss.png")); // put a black texture on the sphere
+    sphere->setMaterialTexture(0,driver->getTexture(texturepath+"fl-abyss.png")); 
+    // put a black texture on the sphere
+    
+    altSphereProgress=0; // an alternate progress handler: initially none
 };
 
 vector3df Sphere::getPosition(){ return position; }
+
+// when setting the sphere's position, immediately update the position
+// of the corresponding ISceneNode
 void Sphere::setPosition(vector3df p){ position=p; sphere->setPosition(p); }
+
 vector3df Sphere::getVelocity(){ return velocity; }
 void Sphere::setVelocity(vector3df v){ velocity=v; }
 
-void Sphere::standardSphereProgress(core::position2di mousemove, f32 frameDeltaTime, f32 friction){
+
+void Sphere::standardSphereProgress(position2di mousemove, f32 frameDeltaTime, f32 friction){
+  /* This method is usually called by the Field the sphere is
+     currently on when time progresses by frameDeltaTime (and that
+     Field does not have a specific influence on the sphere. The
+     standard behavior is that the speed gets modified by the
+     mousemovement and by the friction, and then the sphere just moves
+     into the direction of the speed-vector for time frameDeltaTime.
+  */
+
+  // A field can take global control over the sphere by installing an
+  // alternate handler (see installAlternateSphereProgress). If such a
+  // handler is installed, we just pass everything to that handler.
+  if (altSphereProgress){
+    altSphereProgress(*this,mousemove,frameDeltaTime,friction);
+  }else{
+    // Otherwise, standard behavior:
+
     // Acceleration
     velocity.X += mousemove.Y;
     velocity.Z += mousemove.X;
@@ -69,8 +94,24 @@ void Sphere::standardSphereProgress(core::position2di mousemove, f32 frameDeltaT
     velocity.Z *=1-(friction*frameDeltaTime);
           
     // Update position (note we use the functions getPosition and setPosition!
-    core::vector3df spherePosition = getPosition();
+    vector3df spherePosition = getPosition();
     spherePosition.X += velocity.X*frameDeltaTime;
     spherePosition.Z += velocity.Z*frameDeltaTime;
     setPosition(spherePosition);
+  } 
 };
+
+// When a field wants global control over a sphere it can install an
+// alternate progress handler; see LightFloor (in testfield.h/cpp) for
+// an example of how to use this feature. Note that the argument of
+// this method is itself a function f.
+void Sphere::installAlternateSphereProgress(void (* f)(Sphere &,position2di,f32,f32)){
+  altSphereProgress=f;
+};
+
+// To remove the alternate handler and continue with the standard
+// handler, on can call this function. 
+void Sphere::uninstallAlternateSphereProgress(){
+  altSphereProgress=0;
+};
+
