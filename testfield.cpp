@@ -75,18 +75,11 @@ void TestWall::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap){
     related->block->setVisible(true);
 
   // standard collision detection (a copy of the code parent class)
-  vector3df p=s.getPosition();
-  vector3df v=s.getVelocity();
-  if (xoverlap!=0){ 
-    v.Z= -v.Z; 
-    p.Z += 2*xoverlap; 
-  }
-  if (yoverlap!=0){
-    v.X= -v.X; 
-    p.X += 2*yoverlap; 
-  }
-  s.setPosition(p);
-  s.setVelocity(v);
+  // Tomas: Actually just call the parent function since it is 
+  // very bad practice to copy / pasting code. (i.e. what if you
+  // want to change the code, you have to change it in many placse etc)
+  // Tomas: (this worked)
+  Wall::sphereOverlap(s, xoverlap, yoverlap);
 }
 
 fieldtype TestWall::getFieldType(){ return tTestWall; }

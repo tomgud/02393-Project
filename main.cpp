@@ -3,49 +3,50 @@
 #include "game.h"
 #include "field.h"
 #include "testfield.h"
-#include "T01.h"
-#include "T02.h"
-#include "T03.h"
-#include "T04.h"
-#include "T05.h"
-#include "T06.h"
-#include "T07.h"
-#include "T08.h"
-#include "T09.h"
-#include "T10.h"
-#include "T11.h"
-#include "T12.h"
-#include "T13.h"
-#include "T14.h"
-#include "T15.h"
-#include "T16.h"
-#include "T17.h"
-#include "T18.h"
-#include "T19.h"
-#include "T20.h"
-#include "T21.h"
-#include "T22.h"
-#include "T23.h"
-#include "T24.h"
-#include "T25.h"
-#include "T26.h"
-#include "T27.h"
-#include "T28.h"
-#include "T29.h"
-#include "T30.h"
+// #include "T01.h"
+// #include "T02.h"
+// #include "T03.h"
+// #include "T04.h"
+// #include "T05.h"
+// #include "T06.h"
+// #include "T07.h"
+// #include "T08.h"
+// #include "T09.h"
+// #include "T10.h"
+// #include "T11.h"
+// #include "T12.h"
+// #include "T13.h"
+// #include "T14.h"
+// #include "T15.h"
+// #include "T16.h"
+// #include "T17.h"
+// #include "T18.h"
+// #include "T19.h"
+// #include "T20.h"
+// #include "T21.h"
+// #include "T22.h"
+// #include "T23.h"
+// #include "T24.h"
+// #include "T25.h"
+// #include "T26.h"
+// #include "T27.h"
+// #include "T28.h"
+// #include "T29.h"
+// #include "T30.h"
 #include "T31.h"
-#include "T32.h"
-#include "T33.h"
-#include "T34.h"
-#include "T35.h"
-#include "T36.h"
-#include "T37.h"
-#include "T38.h"
-#include "T39.h"
-#include "T40.h"
+// #include "T32.h"
+// #include "T33.h"
+// #include "T34.h"
+// #include "T35.h"
+// #include "T36.h"
+// #include "T37.h"
+// #include "T38.h"
+// #include "T39.h"
+// #include "T40.h"
 
 io::path texturepath="enigma3d.app/Contents/Resources/";
-
+const int _WINDOW_WIDTH_ = 960;
+const int _WINDOW_HEIGHT_ = 720;
 class MyEventReceiver : public IEventReceiver
 {
 public:
@@ -99,46 +100,46 @@ Field* makefield(int fieldtype, ISceneManager* smgr, IVideoDriver* driver, int i
   case tLightFloor: 
     return new LightFloor(smgr,driver,i,j,pg);
     break;
-  case tT01: return new T01(smgr,driver,i,j,pg); break;
-  case tT02: return new T02(smgr,driver,i,j,pg); break;
-  case tT03: return new T03(smgr,driver,i,j,pg); break;
-  case tT04: return new T04(smgr,driver,i,j,pg); break;
-  case tT05: return new T05(smgr,driver,i,j,pg); break;
-  case tT06: return new T06(smgr,driver,i,j,pg); break;
-  case tT07: return new T07(smgr,driver,i,j,pg); break;
-  case tT08: return new T08(smgr,driver,i,j,pg); break;
-  case tT09: return new T09(smgr,driver,i,j,pg); break;
-  case tT10: return new T10(smgr,driver,i,j,pg); break;
-  case tT11: return new T11(smgr,driver,i,j,pg); break;
-  case tT12: return new T12(smgr,driver,i,j,pg); break;
-  case tT13: return new T13(smgr,driver,i,j,pg); break;
-  case tT14: return new T14(smgr,driver,i,j,pg); break;
-  case tT15: return new T15(smgr,driver,i,j,pg); break;
-  case tT16: return new T16(smgr,driver,i,j,pg); break;
-  case tT17: return new T17(smgr,driver,i,j,pg); break;
-  case tT18: return new T18(smgr,driver,i,j,pg); break;
-  case tT19: return new T19(smgr,driver,i,j,pg); break;
-  case tT20: return new T20(smgr,driver,i,j,pg); break;
-  case tT21: return new T21(smgr,driver,i,j,pg); break;
-  case tT22: return new T22(smgr,driver,i,j,pg); break;
-  case tT23: return new T23(smgr,driver,i,j,pg); break;
-  case tT24: return new T24(smgr,driver,i,j,pg); break;
-  case tT25: return new T25(smgr,driver,i,j,pg); break;
-  case tT26: return new T26(smgr,driver,i,j,pg); break;
-  case tT27: return new T27(smgr,driver,i,j,pg); break;
-  case tT28: return new T28(smgr,driver,i,j,pg); break;
-  case tT29: return new T29(smgr,driver,i,j,pg); break;
-  case tT30: return new T30(smgr,driver,i,j,pg); break;
+  // case tT01: return new T01(smgr,driver,i,j,pg); break;
+  // case tT02: return new T02(smgr,driver,i,j,pg); break;
+  // case tT03: return new T03(smgr,driver,i,j,pg); break;
+  // case tT04: return new T04(smgr,driver,i,j,pg); break;
+  // case tT05: return new T05(smgr,driver,i,j,pg); break;
+  // case tT06: return new T06(smgr,driver,i,j,pg); break;
+  // case tT07: return new T07(smgr,driver,i,j,pg); break;
+  // case tT08: return new T08(smgr,driver,i,j,pg); break;
+  // case tT09: return new T09(smgr,driver,i,j,pg); break;
+  // case tT10: return new T10(smgr,driver,i,j,pg); break;
+  // case tT11: return new T11(smgr,driver,i,j,pg); break;
+  // case tT12: return new T12(smgr,driver,i,j,pg); break;
+  // case tT13: return new T13(smgr,driver,i,j,pg); break;
+  // case tT14: return new T14(smgr,driver,i,j,pg); break;
+  // case tT15: return new T15(smgr,driver,i,j,pg); break;
+  // case tT16: return new T16(smgr,driver,i,j,pg); break;
+  // case tT17: return new T17(smgr,driver,i,j,pg); break;
+  // case tT18: return new T18(smgr,driver,i,j,pg); break;
+  // case tT19: return new T19(smgr,driver,i,j,pg); break;
+  // case tT20: return new T20(smgr,driver,i,j,pg); break;
+  // case tT21: return new T21(smgr,driver,i,j,pg); break;
+  // case tT22: return new T22(smgr,driver,i,j,pg); break;
+  // case tT23: return new T23(smgr,driver,i,j,pg); break;
+  // case tT24: return new T24(smgr,driver,i,j,pg); break;
+  // case tT25: return new T25(smgr,driver,i,j,pg); break;
+  // case tT26: return new T26(smgr,driver,i,j,pg); break;
+  // case tT27: return new T27(smgr,driver,i,j,pg); break;
+  // case tT28: return new T28(smgr,driver,i,j,pg); break;
+  // case tT29: return new T29(smgr,driver,i,j,pg); break;
+  // case tT30: return new T30(smgr,driver,i,j,pg); break;
   case tT31: return new T31(smgr,driver,i,j,pg); break;
-  case tT32: return new T32(smgr,driver,i,j,pg); break;
-  case tT33: return new T33(smgr,driver,i,j,pg); break;
-  case tT34: return new T34(smgr,driver,i,j,pg); break;
-  case tT35: return new T35(smgr,driver,i,j,pg); break;
-  case tT36: return new T36(smgr,driver,i,j,pg); break;
-  case tT37: return new T37(smgr,driver,i,j,pg); break;
-  case tT38: return new T38(smgr,driver,i,j,pg); break;
-  case tT39: return new T39(smgr,driver,i,j,pg); break;
-  case tT40: return new T40(smgr,driver,i,j,pg); break;
+  // case tT32: return new T32(smgr,driver,i,j,pg); break;
+  // case tT33: return new T33(smgr,driver,i,j,pg); break;
+  // case tT34: return new T34(smgr,driver,i,j,pg); break;
+  // case tT35: return new T35(smgr,driver,i,j,pg); break;
+  // case tT36: return new T36(smgr,driver,i,j,pg); break;
+  // case tT37: return new T37(smgr,driver,i,j,pg); break;
+  // case tT38: return new T38(smgr,driver,i,j,pg); break;
+  // case tT39: return new T39(smgr,driver,i,j,pg); break;
+  // case tT40: return new T40(smgr,driver,i,j,pg); break;
   default:
     cerr << "Undefined field type in level file: " << fieldtype << endl;
     error("");
@@ -151,7 +152,7 @@ int main()
   video::E_DRIVER_TYPE driverType=video::EDT_OPENGL; 
   MyEventReceiver receiver;  
   IrrlichtDevice* device = createDevice(driverType,
-					core::dimension2d<u32>(960, 720), 16, false, false, false, &receiver);
+					core::dimension2d<u32>(_WINDOW_WIDTH_, _WINDOW_HEIGHT_), 16, false, false, false, &receiver);
   if (device == 0) return 1; 
   video::IVideoDriver* driver = device->getVideoDriver();
   scene::ISceneManager* smgr = device->getSceneManager();
@@ -229,12 +230,20 @@ int main()
       core::position2di mousemove;
       mousemove.X=(receiver.Position.X-RefPosition.X);
       mousemove.Y=(receiver.Position.Y-RefPosition.Y);
+	  
       // eliminating too rapid movements of the mouse
       if (fabs(mousemove.X)>10) mousemove.X=0;
       if (fabs(mousemove.Y)>10) mousemove.Y=0;
+	  
       // remember current mouse position
-      RefPosition=receiver.Position;
-
+      // RefPosition=receiver.Position;
+	  // Tomas: Instead of remembering where it is,
+	  // we move it to the center of the screen, so it remains
+	  // hidden at all times. This also works better when
+	  // the mouse has actually reach the end of the screen...
+	  device->getCursorControl()->setPosition(_WINDOW_WIDTH_/2, _WINDOW_HEIGHT_/2);
+	  RefPosition = receiver.Position;
+	  
       // Measure the time that has passed since last round 
       const u32 now = device->getTimer()->getTime();
       const f32 frameDeltaTime = (f32)(now - then) / 1000.f; 
@@ -249,9 +258,9 @@ int main()
 
       // tell also all other fields that time has passed:
       for(int j=0; j<dimy; j++)
-	for(int i=0; i<dimx; i++)
-	  if (i!=fieldx && j!=fieldy) 
-	    playground[i][j]->timeProgress(frameDeltaTime);
+		for(int i=0; i<dimx; i++)
+		  if (i!=fieldx && j!=fieldy) 
+	        playground[i][j]->timeProgress(frameDeltaTime);
 
       /* Now we turn to collision detection:
 	 - compute what field the sphere is on now

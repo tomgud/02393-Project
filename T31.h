@@ -10,12 +10,10 @@
 class T31: public Wall // if you implement a Floor tile, replace "Wall" with "Floor"
 {
 public:
-  T31(ISceneManager* smgr,
-      IVideoDriver* driver,
-      int x, int y, playground  pg) ;
+  T31(ISceneManager* smgr, IVideoDriver* driver, int x, int y, playground  pg);
   virtual fieldtype getFieldType();
   // you need to declare here all (virtual) functions that change with respect to parent class
-  // see example in testfiled.h and testfield.cpp
+  // see example in testfield.h and testfield.cpp
 };
 
 
