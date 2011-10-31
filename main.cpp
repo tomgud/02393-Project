@@ -241,7 +241,7 @@ int main()
 	  // we move it to the center of the screen, so it remains
 	  // hidden at all times. This also works better when
 	  // the mouse has actually reach the end of the screen...
-	  device->getCursorControl()->setPosition(_WINDOW_WIDTH_/2, _WINDOW_HEIGHT_/2);
+	  //device->getCursorControl()->setPosition(_WINDOW_WIDTH_/2, _WINDOW_HEIGHT_/2);
 	  RefPosition = receiver.Position;
 	  
       // Measure the time that has passed since last round 
