@@ -29,7 +29,7 @@ void T31::introduceTo(Field &f) {
 
 void T31::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap) {
 	// Might not need this. 
-	// We should call this function in other fields.
+	// We should call this function in parent field.
 	Floor::sphereOverlap(s, xoverlap, yoverlap);
 }
 
@@ -53,13 +53,6 @@ void T31::timeProgress(f32 frameDeltaTime) {
 	} else {
 		timePassed += frameDeltaTime;
 	}
-	
-	if (isActive) {
-		// Need to check every friend field
-		// if ball is in that field.
-		// If we are active, then we apply force.
-	}
-	// else we do nothing
 }
 
 fieldtype T31::getFieldType(){ 
