@@ -13,19 +13,25 @@ const static int friendFieldSize = 16;
 
 class T31: public Floor // if you implement a Floor tile, replace "Wall" with "Floor"
 {
-protected:
-	const static f32 timeActive = 2.0;
-	const static f32 force = 5.0;
-	Field* friendFields[friendFieldSize];
-	bool isActive;
-	f32 timePassed;
-public:
-  T31(ISceneManager* smgr, IVideoDriver* driver, int x, int y, playground  pg);
-  virtual fieldtype getFieldType();
-  virtual void introduceTo(Field &f);
-  virtual void sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap);
-  virtual void handleSphere(Sphere &s, position2di mousemove, f32 frameDeltaTime);
-  virtual void timeProgress(f32 frameDeltaTime);
+	protected:
+		const static f32 timeActive = 2.0;
+		const static f32 force = 5.0;
+		Field* friendFields[friendFieldSize];
+		bool isActive;
+		f32 timePassed;
+		int texIndexIncrement;
+		int texIndex;
+		void changeTexture();
+	
+	public:
+		T31(ISceneManager* smgr, IVideoDriver* driver, int x, int y, playground  pg);
+		virtual fieldtype getFieldType();
+		virtual void introduceTo(Field &f);
+		virtual void sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap);
+		virtual void handleSphere(Sphere &s, position2di mousemove, f32 frameDeltaTime);
+		virtual void timeProgress(f32 frameDeltaTime);
+		virtual void sphereEnter(Sphere &s);
+		virtual void sphereExit(Sphere &s);
 };
 
 
