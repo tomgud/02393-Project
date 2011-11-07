@@ -17,6 +17,7 @@ T31::T31(ISceneManager* smgr, IVideoDriver* driver, int x, int y, playground pg)
 	this->timePassed = 0.0;
 	this->texIndexIncrement = 2;
 	this->texIndex = 0;
+	this->isCenterField = true;
 	
 	// Texture stuff
 	block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor0.bmp") );
@@ -64,75 +65,73 @@ void T31::handleSphere(Sphere &s, position2di mousemove, f32 frameDeltaTime)
 
 void T31::changeTexture()
 {
-	if ( this->texIndex < 100 ) {
+	if ( this->texIndex < 50 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor0.bmp") ); 
 	}
-	else if ( this->texIndex < 200 ) {
+	else if ( this->texIndex < 100 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor1.bmp") ); 
 	}
-	else if ( this->texIndex < 250 ) {
+	else if ( this->texIndex < 150 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor2.bmp") ); 
 	}
-	else if ( this->texIndex < 300 ) {
+	else if ( this->texIndex < 200 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor3.bmp") ); 
 	}
-	else if ( this->texIndex < 350 ) {
+	else if ( this->texIndex < 250 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor4.bmp") ); 
 	}
-	else if ( this->texIndex < 400 ) {
+	else if ( this->texIndex < 300 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor5.bmp") ); 
 	}
-	else if ( this->texIndex < 450 ) {
+	else if ( this->texIndex < 350 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor6.bmp") ); 
 	}
-	else if ( this->texIndex < 500 ) {
+	else if ( this->texIndex < 400 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor7.bmp") ); 
 	}
-	else if ( this->texIndex < 550 ) {
+	else if ( this->texIndex < 450 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor8.bmp") ); 
 	}
-	else if ( this->texIndex < 600 ) {
+	else if ( this->texIndex < 500 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor9.bmp") ); 
 	}
-	else if ( this->texIndex < 650 ) {
+	else if ( this->texIndex < 550 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor10.bmp") ); 
 	}
-	else if ( this->texIndex < 700 ) {
+	else if ( this->texIndex < 600 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor11.bmp") ); 
 	}
-	else if ( this->texIndex < 750 ) {
+	else if ( this->texIndex < 650 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor12.bmp") ); 
 	}
-	else if ( this->texIndex < 800 ) {
+	else if ( this->texIndex < 700 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor13.bmp") ); 
 	}
-	else if ( this->texIndex < 850 ) {
+	else if ( this->texIndex < 750 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor14.bmp") ); 
 	}
-	else if ( this->texIndex < 900 ) {
+	else if ( this->texIndex < 800 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor15.bmp") ); 
 	}
-	else if ( this->texIndex < 950 ) {
+	else if ( this->texIndex < 850 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor16.bmp") ); 
 	}
-	else if ( this->texIndex < 1000 ) {
+	else if ( this->texIndex < 900 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor17.bmp") ); 
 	}
-	else if ( this->texIndex < 1050 ) {
+	else if ( this->texIndex < 950 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor18.bmp") ); 
 	}
-	else if ( this->texIndex < 1100 ) {
+	else if ( this->texIndex < 1000 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor19.bmp") ); 
 	}
-	else if ( this->texIndex < 1150 ) {
+	else if ( this->texIndex < 1050 ) {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor20.bmp") ); 
 	}
 	else {
 		block->setMaterialTexture(0, driver->getTexture(texturepath + "pulsecolor0.bmp") ); 
 		this->texIndex = 0;
 	}
-	
-	this->texIndex += this->texIndexIncrement;
 }
 
 void T31::timeProgress(f32 frameDeltaTime)

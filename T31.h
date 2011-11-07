@@ -18,10 +18,12 @@ class T31: public Floor // if you implement a Floor tile, replace "Wall" with "F
 		const static f32 force = 5.0;
 		Field* friendFields[friendFieldSize];
 		bool isActive;
+		bool isCenterField;
 		f32 timePassed;
 		int texIndexIncrement;
 		int texIndex;
 		void changeTexture();
+		
 	
 	public:
 		T31(ISceneManager* smgr, IVideoDriver* driver, int x, int y, playground  pg);
@@ -32,6 +34,7 @@ class T31: public Floor // if you implement a Floor tile, replace "Wall" with "F
 		virtual void timeProgress(f32 frameDeltaTime);
 		virtual void sphereEnter(Sphere &s);
 		virtual void sphereExit(Sphere &s);
+		bool switchCenterField(bool val);
 };
 
 
