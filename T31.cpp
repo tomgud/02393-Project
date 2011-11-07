@@ -29,8 +29,13 @@ void T31::introduceTo(Field &f)
 	// Should add this field to friendFields vector.
 	int place = sizeof(this->friendFields)/sizeof(Field) - 1;
 	this->friendFields[place] = &f;
+	T31* friendField = (T31*) &f;
+	friendField->switchCenterField(false);
 }
 
+void T31::switchCenterField(bool val) {
+	this->isCenterField = val;
+}
 
 void T31::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap)
 {
@@ -48,15 +53,30 @@ void T31::handleSphere(Sphere &s, position2di mousemove, f32 frameDeltaTime)
 	timeProgress(frameDeltaTime);
 	if (isActive)
 	{
-		vector3df here = vector3df(getx()*fieldsize, 0, gety()*fieldsize);
-		vector3df zero = here + s.getVelocity();
-		//s.setPosition(here);
-		//s.setVelocity(zero);
-		
-		vector3df p = s.getPosition();
-		vector3df v = s.getVelocity();
-		s.setPosition(p);
-		s.setVelocity(v);
+		// This isCenterField tells us if the ball is located 
+		// in the center of a cluster of T31 fields.
+		// All fields that are introducedTo a field X
+		// are immediately set to not being centerFields.
+		// so introduce(X, Y), both fields are of type T31 
+		// but only X will be centerfield. This way we have 
+		// control of adjacent fields and seperate functionality 
+		// of the outliers of the cluster of T31 fields.
+		if (this->isCenterField) {	
+			// Got into the centerfield. 
+			// Must propel it out...
+			vector3df here = vector3df(getx()*fieldsize, 0, gety()*fieldsize);
+			vector3df zero = here + s.getVelocity();
+			//s.setPosition(here);
+			//s.setVelocity(zero);
+			
+			vector3df p = s.getPosition();
+			vector3df v = s.getVelocity();
+			s.setPosition(p);
+			s.setVelocity(v);
+		} else {
+			// Move the ball away from the centerField.
+			cout << "Ball is in a T31 that is not in the center [" << this->getx() << "," << this->gety() << "]" << endl;
+		}
 		
 		
 	}

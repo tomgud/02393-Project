@@ -34,7 +34,7 @@ class T31: public Floor // if you implement a Floor tile, replace "Wall" with "F
 		virtual void timeProgress(f32 frameDeltaTime);
 		virtual void sphereEnter(Sphere &s);
 		virtual void sphereExit(Sphere &s);
-		bool switchCenterField(bool val);
+		void switchCenterField(bool val);
 };
 
 
