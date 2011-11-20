@@ -139,7 +139,7 @@ Field* makefield(int fieldtype, ISceneManager* smgr, IVideoDriver* driver, int i
   case tT37: return new T37(smgr,driver,i,j,pg); break;
   case tT38: return new T38(smgr,driver,i,j,pg); break;
   case tT39: return new T39(smgr,driver,i,j,pg); break;
-  case tT40: return new T40(smgr,driver,i,j,pg); break;*/
+  case tT40: return new T40(smgr,driver,i,j,pg); break;*/ 
   default:
     cerr << "Undefined field type in level file: " << fieldtype << endl;
     error("");
