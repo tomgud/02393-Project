@@ -15,7 +15,7 @@ class T31: public Floor // if you implement a Floor tile, replace "Wall" with "F
 {
 	protected:
 		const static f32 timeActive = 2.0;
-		const static f32 force = 5.0;
+		const static f32 force = 5.0; 
 		Field* friendFields[friendFieldSize];
 		bool isActive;
 		bool isCenterField;

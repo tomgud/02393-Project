@@ -47,8 +47,9 @@ void T31::sphereOverlap(Sphere &s, f32 xoverlap, f32 yoverlap)
 
 void T31::handleSphere(Sphere &s, position2di mousemove, f32 frameDeltaTime)
 {
-	Floor::handleSphere(s, mousemove, frameDeltaTime);
-	
+	//Floor::handleSphere(s, mousemove, frameDeltaTime);
+	vector3df vel = s.getVelocity();
+	vector3df pos = s.getPosition();
 	// Need to keep on counting.
 	timeProgress(frameDeltaTime);
 	if (isActive)
@@ -68,14 +69,13 @@ void T31::handleSphere(Sphere &s, position2di mousemove, f32 frameDeltaTime)
 			vector3df zero = here + s.getVelocity();
 			//s.setPosition(here);
 			//s.setVelocity(zero);
-			
-			vector3df p = s.getPosition();
-			vector3df v = s.getVelocity();
-			s.setPosition(p);
-			s.setVelocity(v);
+			s.setPosition(pos);
+			s.setVelocity(vel);
 		} else {
 			// Move the ball away from the centerField.
-			cout << "Ball is in a T31 that is not in the center [" << this->getx() << "," << this->gety() << "]" << endl;
+			cout << "Ball is in a T31 that is not in the center [" << this->getx() << "," << this->gety() << "]" << endl; 
+			vel.X = -vel.X;
+			vel.Z = -vel.Z;
 		}
 		
 		
