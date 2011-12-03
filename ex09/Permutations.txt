@@ -59,21 +59,46 @@ The problem size is reduced in the for loop when the program creates a string, n
 
 3. Change the method such that it does not print out strings, but returns the number of words that normally would have been printed. (Hint: Keep track of all the words that are printed in the for loop.)
 
-string Permute(string soFar, string rest)
+int Permute(string soFar, string rest)
 {
-    if (rest == "") { 
-        return soFar + "\n";
-    } 
-    else {
-        string combinedPermutationsString = "";
-        for (int i = 0; i < rest.length(); i++) 
-        {
-            string remaining = rest.substr(0, i) + rest.substr(i+1);
-            combinedPermutationsString += Permute(soFar + rest[i], remaining);
-        }
-        return combinedPermutationsString;
-    }
+	int val = 0;
+	if (rest == "") { 
+		cout << soFar + "\n";
+	} 
+	else {
+		for (int i = 0; i < rest.length(); i++) 
+		{
+			string remaining = rest.substr(0, i) + rest.substr(i+1);
+			val += remaining.length();
+			Permute(soFar + rest[i], remaining);
+		}
+		return val;
+	}
 }
 
 
 4. Modify the function so that it never reports any duplicate solutions, e.g. when called for argument "aa", there should be only one output. (Hint: Add a third argument to the function to remember the words produced so far.)
+
+string Permute( string soFar, string rest, vector<string> published )
+{
+    if (rest == "") {
+        for (int i=0; i<published.size(); i++) {
+            if (soFar == published[i] ) {
+                return "";
+            }
+        }
+        return soFar;
+    } 
+    else {
+        string allResults = "";
+        string result = "";
+        for (int i = 0; i < rest.length(); i++) 
+        {
+            string remaining = rest.substr(0, i) + rest.substr(i+1);
+            result = Permute(soFar + rest[i], remaining, published);
+            allResults += result;
+            published.push_back(result);
+        }
+        return allResults;
+    }
+}
