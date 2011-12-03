@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
-int Permute(string soFar, string rest)
+int Permute(string soFar, string rest, vector<string> allPerms)
 {
 	int val = 0;
     if (rest == "") { 
