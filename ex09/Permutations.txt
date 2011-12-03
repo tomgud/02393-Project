@@ -42,3 +42,18 @@ Calls:
 	
 	Permute( "cb", "a" )
 	Permute( "cba", "" )
+	
+Answers:
+
+1. When invoked as Permute("","abc"), what does the function write to cout?
+abc
+acb
+bac
+bca
+cab
+cba
+
+2. What is the base case (simplemost case) in the recursion? How is the problem size reduced in the recursive calls?
+The base is when rest equals an empty string or "".
+The problem size is reduced in the for loop when the program creates a string, named remaining, that takes a substring of the rest string.
+
