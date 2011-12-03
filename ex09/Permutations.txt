@@ -57,3 +57,23 @@ cba
 The base is when rest equals an empty string or "".
 The problem size is reduced in the for loop when the program creates a string, named remaining, that takes a substring of the rest string.
 
+3. Change the method such that it does not print out strings, but returns the number of words that normally would have been printed. (Hint: Keep track of all the words that are printed in the for loop.)
+
+string Permute(string soFar, string rest)
+{
+    if (rest == "") { 
+        return soFar + "\n";
+    } 
+    else {
+        string combinedPermutationsString = "";
+        for (int i = 0; i < rest.length(); i++) 
+        {
+            string remaining = rest.substr(0, i) + rest.substr(i+1);
+            combinedPermutationsString += Permute(soFar + rest[i], remaining);
+        }
+        return combinedPermutationsString;
+    }
+}
+
+
+4. Modify the function so that it never reports any duplicate solutions, e.g. when called for argument "aa", there should be only one output. (Hint: Add a third argument to the function to remember the words produced so far.)
