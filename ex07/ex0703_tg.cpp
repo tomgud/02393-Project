@@ -4,13 +4,14 @@
 #include <math.h>
 using namespace std;
 
+template <typename T>
 class vecNd {
 private:
-	double *elements;
+	T *elements;
 	int N; // Number of elemntes allowed in this array
 public:
 	vecNd(int N = 1) {
-		elements = new double[N];
+		elements = new T[N];
 		this->N = N;
 	}
 	
@@ -18,12 +19,12 @@ public:
 		return this->N;
 	}
 	
-	double operator[] (int i) {
+	T operator[] (int i) {
 		if (i < this->N) {
 			return elements[i];
 		}
 	}
-	void set_elem_at(int i, double val) {
+	void set_elem_at(int i, T val) {
 		if (i < this->N) {
 			elements[i] = val;
 		}
@@ -45,9 +46,9 @@ public:
 			elements[i] *= k;
 		}
 	}
-	double product(vecNd &v2) {
+	T product(vecNd &v2) {
 		int smaller = (this->N < v2.get_N()) ? this->N : v2.get_N();
-		double result = 0.0;
+		T result = 0.0;
 		for (int i = 0; i < smaller; ++i) {
 			result += elements[i] * v2[i];
 		}
@@ -55,23 +56,23 @@ public:
 
 	}
 	
-	double length() {
+	T length() {
 		return sqrt(product(*this));	
 	}
 	
 };
 
 int main() {
-	vecNd v1(2);
+	vecNd<double> v1(2);
 	v1.set_elem_at(0, 3);
 	v1.set_elem_at(1, 6);
-	vecNd v2(3);
+	vecNd<double> v2(3);
 	v2.set_elem_at(0, 2);
 	v2.set_elem_at(1, 5);
 	v2.set_elem_at(2, 7);
 	
-	vecNd v3 = v2.add(v1);
-	vecNd v4 = v1.add(v2);
+	vecNd<double> v3 = v2.add(v1);
+	vecNd<double> v4 = v1.add(v2);
 
 	cout << "v1 [" << v1[0] << "," << v1[1] << "]" << endl;
 	cout << "v2 [" << v2[0] << "," << v2[1] << "," << v2[2] << "]" << endl;
@@ -85,4 +86,27 @@ int main() {
 	cout << "length(v1) : " << v1.length() << endl;
 	cout << "length(v3) : " << v3.length() << endl;
 	
+	vecNd<string> vString1(5); 
+	vecNd<string> vString2(5);
+	vString1.set_elem_at(0, "Hello");
+	vString1.set_elem_at(1, "World");
+	vString1.set_elem_at(2, "My");
+	vString1.set_elem_at(3, "Name");
+	vString1.set_elem_at(4, "is");
+	vString2.set_elem_at(0, "Newcastle");
+	vString2.set_elem_at(1, "vs");
+	vString2.set_elem_at(2, "Chelsea");
+	vString2.set_elem_at(3, "is");
+	vString2.set_elem_at(4, "on");
+	for (int i = 0; i < 5; ++i) 
+		cout << vString1[i] << " ";
+	for (int i = 0; i < 5; ++i) 
+		cout << vString2[i] << " ";
+	cout << endl;
+	// Let's see how the adding works
+	// Note: Only works with vectors of same size
+	vecNd<string> vString3 = vString1.add(vString2);
+	for (int i = 0; i < 6; ++i) 
+		cout << vString3[i] << " " ;
+	cout << endl;
 }
