@@ -23,6 +23,7 @@ public:
 		if (i < this->N) {
 			return elements[i];
 		}
+		// Should put out an error message or throw an exception
 	}
 	void set_elem_at(int i, T val) {
 		if (i < this->N) {

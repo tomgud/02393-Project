@@ -1,0 +1,52 @@
+void printintset(set<int> s) {
+	set<int>::iterator it = s.begin();
+	cout << "{";
+	while (it != s.end()) {
+		cout << "[" << it << "] ";
+		it++;
+	}
+	cout << "}";
+}
+
+2. It prints out
+
+1. call
+choice {1,2}
+chosen {}
+Prints nothing
+
+2a. call
+choice {2}
+chosen {}
+Prints out nothing
+
+2b. call 
+choice {2}
+chosen {1}
+
+3a. call
+choice {}
+chosen {}
+Prints out {}
+
+3b. call 
+choice {}
+chosen {2}
+Prints out {2}
+
+3c. call 
+choice {}
+chosen {1}
+Prints out {1}
+
+3d. call
+choice {}
+chosen {1,2}
+Prints out {1,2}
+
+Prints out in total
+{2}
+{1}
+{1,2}
+
+3. It never runs into an infinite loop because it keeps on removing entries from set choice. It does move them into the set chosen but it's exit criteria is the number of elements in set choice. When that set becomes empty we return and stop. TODO for exam look up what "problem size" means.
